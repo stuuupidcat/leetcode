@@ -1,0 +1,21 @@
+[package]
+authors = ["stuuupidcat <stuuupidcat@163.com>"]
+edition = "2024"
+name = "progress-tracker"
+publish = false
+version = "0.1.0"
+
+[lints]
+workspace = true
+
+[dependencies]
+chrono = "*"
+git2 = "*"
+http = "*"
+num = "*"
+plotters = "*"
+reqwest = { version = "*", features = ["blocking", "json"] }
+serde = { version = "*", features = ["derive"] }
+
+[dev-dependencies]
+serde_json = "*"

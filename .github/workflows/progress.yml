@@ -1,0 +1,24 @@
+name: Progress
+on:
+    push:
+        branches:
+          - master
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+          - run: sudo apt-get update && sudo apt-get install --no-install-recommends -y libfontconfig-dev
+          - uses: actions/checkout@v4
+            with:
+                fetch-depth: 0
+          - run: rustup update
+          - run: cargo run --package progress-tracker --release -- . _site
+          - uses: actions/upload-pages-artifact@v4
+    deploy:
+        needs: build
+        permissions:
+            id-token: write
+            pages: write
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/deploy-pages@v4

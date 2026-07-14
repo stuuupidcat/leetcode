@@ -1,0 +1,29 @@
+# `*-use-nullptr` checks is allowed due to a clang-tidy bug.
+
+Checks: >-
+    *,
+    -altera-id-dependent-backward-branch,
+    -altera-struct-pack-align,
+    -altera-unroll-loops,
+    -bugprone-easily-swappable-parameters,
+    -cppcoreguidelines-avoid-do-while,
+    -cppcoreguidelines-avoid-magic-numbers,
+    -cppcoreguidelines-pro-bounds-pointer-arithmetic,
+    -fuchsia-default-arguments-calls,
+    -llvm-header-guard,
+    -llvm-include-order,
+    -llvmlibc-callee-namespace,
+    -llvmlibc-implementation-in-namespace,
+    -llvmlibc-inline-function-decl,
+    -llvmlibc-restrict-system-libc-headers,
+    -misc-include-cleaner,
+    -misc-no-recursion,
+    -modernize-use-trailing-return-type,
+    -readability-convert-member-functions-to-static,
+    -readability-identifier-length,
+    -readability-magic-numbers,
+WarningsAsErrors: '*'
+HeaderFilterRegex: '.*'
+FormatStyle: file
+CheckOptions:
+    misc-non-private-member-variables-in-classes.IgnoreClassesWithAllMemberVariablesBeingPublic: 'true'
