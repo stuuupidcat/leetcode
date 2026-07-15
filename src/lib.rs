@@ -14,7 +14,7 @@
 )]
 
 pub mod data_structures;
-pub mod problem_0001_two_sum;
 
 #[cfg(test)]
 mod test_utilities;
+pub mod problem_0001_two_sum;
